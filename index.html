@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" >
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>JavaScript Page Magnifier</title>
+    <link rel="stylesheet" href="./css/styles.css">   
+  </head>
+
+  <body>
+    <div id="sidebar">Example Sidebar</div>
+    <div id="magRegion" onmousemove="positionMagnifier(event)"
+    onmouseover="hideScrollBars()" onmouseout="showScrollBars()">
+      <!-- Magnifiable content placed here -->
+      <img src="./images/example-image.jpg" width=300>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+         sed do eiusmod tempor incididunt ut labore et dolore magna
+         aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+         ullamco laboris nisi ut aliquip ex ea commodo consequat.
+         Duis aute irure dolor in reprehenderit in voluptate velit
+         esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+         occaecat cupidatat non proident, sunt in culpa qui officia
+         deserunt mollit anim id est laborum.</p>
+    </div>
+
+    <div id="magnifier" onmousemove="positionMagnifier(event)"
+    onmouseover="hideScrollBars()" onmouseout="showScrollBars()">
+    </div>
+
+    <script src="./js/magnifier.js"></script>
+  </body>
+</html>

@@ -1,0 +1,155 @@
+/*--EXAMPLE CONTENT CSS--*/
+
+body {
+  margin: 0px;
+
+  /*Page background - solid color, gradient, image, etc.*/
+  
+  /*Example 1 - solid color*/
+  /*
+  background-color: red;
+  */
+
+  /*Example 2 / Example 4 - image*/
+  background-image: url("../images/example-bg.jpg");
+  background-size: 1080px 810px;
+  
+  /*Example 3 / Example 5 - gradient*/
+  /*
+  background: linear-gradient(45deg, red, blue);
+  background-size: 1000px 1000px;
+  */
+}
+
+img {
+  display: block;
+  margin: auto;
+  border: 1px solid black;
+}
+
+p {
+  color: greenyellow;
+}
+
+#sidebar {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 200px;
+  height: 1000px;
+  background-color: gray;
+}
+
+
+/*--MAGNIFIER CSS--*/
+
+/*#magRegion requires width, height, and a centered 1x-scaled transformation, at a minimum*/
+/*box-sizing of border-box recommended*/
+#magRegion {
+  position: relative;
+  left: 200px;
+  top: 50px;
+  margin: 20px;
+  box-sizing: border-box;
+  width: 400px;
+  height: 600px;
+  transform: scale(1);
+  transform-origin: center center;
+  overflow: hidden;
+  border: 5px solid black; 
+}
+
+/*#magCopy requires same width, height, box-sizing (if defined), padding (if any),
+  and border (if any) as #magRegion plus a centered 1x-scaled transformation*/
+#magCopy {
+  position: relative;
+  box-sizing: border-box;
+  width: 400px;
+  height: 600px;
+  transform: scale(1);
+  transform-origin: center center;
+  overflow: hidden;
+  cursor: none;
+  border: 5px solid black;
+
+  /*disable user-select to prevent interacting with copied content within magnifier - optional*/
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+
+  /*Note: For solid page background, include:
+    > background-color (same as applied on body)
+
+  /*Note: For non-solid, non-fixed magnifiable page background, include:
+    > background or background-image (same as applied on body)
+    > background-size, as required (same as applied on body in absolute units)
+    > background-position: -<total left offset/margin/border for #magRegion/body/image>
+                           -<total top offset/margin/border for #magRegion/body/image>;*/
+  
+  /*Example 1 - solid color*/
+  /*
+  background-color: red;
+  */
+
+  /*Example 2 - magnifiable image*/
+  background-image: url("../images/example-bg.jpg");
+  background-size: 1080px 810px;
+  background-position: -225px -75px;
+
+  /*Example 3 - magnifiable gradient*/
+  /*
+  background: linear-gradient(45deg, red, blue);
+  background-size: 1000px 1000px;
+  background-position: -225px -75px;
+  */
+}
+
+/*Use only for a non-solid, non-magnifiable page background - superceded if background
+  is included in #magCopy*/
+/*unmagBg requires same width, height, box-sizing (if defined), padding (if any),
+  and border-size (if any) as #magRegion, a centered 1x-scaled transformation,
+  a transparent border-color (if any), and absolute position*/
+#unmagBg {
+  position: absolute;
+  box-sizing: border-box;
+  width: 400px;
+  height: 600px;
+  transform: scale(1);
+  transform-origin: center center;
+  overflow: hidden;
+  border: 5px solid transparent;
+
+  /*Note: include:
+    > background or background-image (same as applied on body)
+    > background-size, as required (same as applied on body in absolute units)
+    > background-position: -<total left offset/margin/border for #magRegion/body/image>
+                           -<total top offset/margin/border for #magRegion/body/image>;*/
+ 
+  /*Example 4 - unmagnifiable image*/
+  /*
+  background-image: url("../images/example-bg.jpg");
+  background-size: 1080px 810px;
+  background-position: -225px -75px;
+  */
+
+  /*Example 5 - unmagnifiable gradient*/
+  /*
+  background: linear-gradient(45deg, red, blue);
+  background-size: 1000px 1000px;
+  background-position: -225px -75px;
+  */
+}
+
+/*#magnifier requires absolute position, width/height, and hidden overflow*/
+#magnifier {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+
+  /*box-shadow with unfilled border is used instead of border/outline to achieve rounded
+    size-compatible outline*/
+  border-radius: 50%;
+  box-shadow: 0px 0px 0px 5px black;
+}

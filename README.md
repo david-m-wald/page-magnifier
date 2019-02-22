@@ -76,3 +76,8 @@ Use the mouse wheel to zoom in and out on magnifiable content while the magnifie
 - Initial release
 - Mouse functionality
 - Magnifier automatically enabled
+
+#### v1.0.1 -- February 21, 2019
+
+- Fixed cursor display bug
+- Code cleanup and improvement with constants and removed global variables

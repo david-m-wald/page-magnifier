@@ -118,6 +118,7 @@ p {
   transform: scale(1);
   transform-origin: center center;
   overflow: hidden;
+  cursor: none;
   border: 5px solid transparent;
 
   /*Note: include:
